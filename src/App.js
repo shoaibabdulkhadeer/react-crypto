@@ -8,11 +8,21 @@ import Signup from "./routes/Signup";
 import Coinspage from "./routes/Coinspage";
 import axios from 'axios'
 import Footer from "./components/Footer";
+import HashLoader  from "react-spinners/HashLoader";
 
 
 function App() {
 
 const [coins,setCoins] = useState([])
+const [loading, setLoading] = React.useState(false)
+
+useEffect(() => {
+  setLoading(true)
+  setTimeout(() => {
+       setLoading(false)
+  },4000)
+
+},[])
 
 const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=30&page=1&sparkline=true"
 
@@ -24,7 +34,21 @@ useEffect (() => {
 
 
   return (
-    <div className="App">
+    <div className="flex justify-center items-center">
+     
+  
+      {                   
+        loading ?  <div className="absolute top-[40vh]  "> <HashLoader  
+        className=""
+        color={"#36d7b7"}
+        loading={loading}
+        size={150} 
+        
+      /> </div>
+      
+    :
+
+    <div>
      <Navbar />
      <Routes >
       <Route path="/"  element={<Home coins={coins} />}/>
@@ -34,6 +58,9 @@ useEffect (() => {
       <Route path="/coin/:kuchbhi" element={<Coinspage />} />
       </Routes>
       <Footer />
+      </div> }
+ 
+
     </div>
   );
 }
