@@ -10,7 +10,7 @@ const Coinspage = () => {
     const [coin,setCoin] = useState({})
     const params = useParams()
  
-    const url = `https://api.coingecko.com/api/v3/coins/${params.kuchbhi}?localization=false&sparkline=true`
+    const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}?localization=false&sparkline=true`
   
     useEffect(() => {
         axios.get(url).then((response) => {

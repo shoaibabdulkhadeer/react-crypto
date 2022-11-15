@@ -55,7 +55,7 @@ useEffect (() => {
       <Route path="/signin"  element={<Signin />}/>
       <Route path="/signup"  element={<Signup />}/>
       <Route path="/account" element={<Account />}/>
-      <Route path="/coin/:kuchbhi" element={<Coinspage />} />
+      <Route path="/coin/:coinId" element={<Coinspage />} />
       </Routes>
       <Footer />
       </div> }

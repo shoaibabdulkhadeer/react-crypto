@@ -47,7 +47,7 @@ const CoinSearch = ({ coins }) => {
             })
             .map((coin) => (
               <CoinItem key={coin.id} coin={coin} />
-            ))}
+          ))}
         </tbody>
       </table>
     </div>
