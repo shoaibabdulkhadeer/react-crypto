@@ -44,13 +44,13 @@ const Navbar = () => {
    
 
     {/* Mobile menu */}
-    <div className= {menu ? 'flex flex-col gap-1  fixed mx-auto top-20  items-center bg-white w-[385px]  min-h-[60%]  font-mono z-20 text-xl md:w-[900px] '  : "hidden"}>
-      <Link to="/" className='border-b rounded-div  w-full hover:tracking-[2px] hover:bg-blue-400 hover:border-black flex items-center gap-2' onClick={handleChange}> <FcHome/> - Home  </Link>
+    <div className= {menu ? 'flex flex-col gap-1  fixed  top-20  items-center bg-white rounded-div2  min-h-[60%]  font-mono text-xl md:w-[1200px] '  : "hidden"}>
+      <Link to="/" className='border-b rounded-div   hover:tracking-[2px] hover:bg-blue-400 hover:border-black flex items-center gap-2' onClick={handleChange}> <FcHome/> - Home  </Link>
       <Link to="/account" className='border-b rounded-div  w-full hover:tracking-[2px] hover:bg-blue-400  hover:border-black flex items-center gap-2' onClick={handleChange}> <RiAccountPinBoxFill /> - Account  </Link>
       <Link to="/" className='border-b rounded-div w-full hover:tracking-[2px] hover:bg-blue-400  hover:border-black flex items-center gap-2' onClick={handleChange}> <GrContact /> - Contact</Link>
 
-      <div className='flex flex-col absolute bottom-4 gap-2 items-center w-full p-6 text-center m-4 '>
-      <Link to="/signin" className='border-b rounded-div w-full hover:tracking-[2px] hover:bg-blue-100 hover:border-black' onClick={handleChange}>Sign In</Link>
+      <div className='flex flex-col absolute bottom-4 gap-2 items-center w-96 p-6 text-center mr-10 '>
+      <Link to="/signin" className='border-b rounded-div hover:tracking-[2px] hover:bg-blue-100 hover:border-black' onClick={handleChange}>Sign In</Link>
       <Link to="/signup" className='border-b bg-blue-500 text-white p-2 rounded-full w-full hover:tracking-[2px] hover:border-black' onClick={handleChange}> Sign Up</Link>
     </div>
      

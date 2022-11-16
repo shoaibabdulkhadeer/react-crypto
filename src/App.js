@@ -34,11 +34,11 @@ useEffect (() => {
 
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="">
      
   
       {                   
-        loading ?  <div className="absolute top-[40vh]  "> <HashLoader  
+        loading ?  <div className="absolute top-[40vh] left-[35%] md:left-[45%]  "> <HashLoader  
         className=""
         color={"#36d7b7"}
         loading={loading}
