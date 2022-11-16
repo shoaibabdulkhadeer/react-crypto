@@ -4,7 +4,7 @@ import Trending from '../components/Trending'
 
 const Home = ({coins}) => {
   return (
-    <div className='rounded-div min-h-[90vh]' >
+    <div className=' min-h-[90vh]' >
         <CoinSearch coins={coins}/> 
         <Trending />
     </div>

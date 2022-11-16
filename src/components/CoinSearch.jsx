@@ -11,7 +11,7 @@ const CoinSearch = ({ coins }) => {
         <form>
           <input
             onChange={(e) => setSearchText(e.target.value)}
-            className='rounded-div border-blue-400'
+            className='rounded-div border-blue-400 placeholder-red-500'
             type='text'
             placeholder='Search a coin'
           />
