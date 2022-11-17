@@ -34,9 +34,9 @@ const Coinspage = () => {
         <div className='grid md:grid-cols-2 gap-2' >
                       {/* left box */}
                   <div className='rounded-div'>
-                      <div className='flex justify-between'>
+                      <div className='flex justify-between p-2'>
                              {coin.market_data?.current_price ? (
-                            <p>{coin.market_data.current_price.usd.toLocaleString()}</p>
+                            <p className='text-3xl font-bold '> ${coin.market_data.current_price.usd.toLocaleString()}</p>
                             ) : null }
                             <p>7 Day</p>                      
                         </div>
