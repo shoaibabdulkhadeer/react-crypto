@@ -11,6 +11,6 @@
 }
 
 .rounded-div2 {
-  @apply border rounded-2xl shadow-xl bg-blue-200 px-2 max-w-[1140px] w-full mx-auto
+  @apply border rounded-2xl shadow-xl bg-violet-50 px-2 max-w-[1140px] w-full mx-auto
 }
 

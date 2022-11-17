@@ -9,6 +9,7 @@ import Coinspage from "./routes/Coinspage";
 import axios from 'axios'
 import Footer from "./components/Footer";
 import HashLoader  from "react-spinners/HashLoader";
+import { AuthContextProvider } from "./context/AuthContext";
 
 
 function App() {
@@ -49,6 +50,7 @@ useEffect (() => {
     :
 
     <div>
+    <AuthContextProvider >
      <Navbar />
      <Routes >
       <Route path="/"  element={<Home coins={coins} />}/>
@@ -58,6 +60,7 @@ useEffect (() => {
       <Route path="/coin/:coinId" element={<Coinspage />} />
       </Routes>
       <Footer />
+    </AuthContextProvider>
       </div> }
  
 
