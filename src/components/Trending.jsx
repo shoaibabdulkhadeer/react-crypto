@@ -19,7 +19,7 @@ const Trending = () => {
      <h1 className='text-2xl font-bold m-2'>Trending Coins</h1>
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {trending.map((coin,idx)=> (
-            <div  key={coin.id} className='rounded-div flex justify-between  h-[70px] hover:scale-105 hover:bg-blue-100'> 
+            <div  key={coin.id} className='shadow-box-shadow px-2 flex rounded-lg justify-between  h-[70px] hover:scale-105 hover:bg-blue-100'> 
                  <div  className='flex '> 
                       <img className='rounded-full mr-4 scale-50 -z-10' src ={coin.item.small} alt= "/" />
                           <div className='flex flex-col gap-2 mt-2'>               

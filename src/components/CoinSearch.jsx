@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
 import CoinItem from './CoinItem';
+import { FcSearch  } from 'react-icons/fc';
+
+
 
 const CoinSearch = ({ coins }) => {
   const [searchText, setSearchText] = useState('');
   console.log(coins)
   return (
-    <div className='rounded-div my-4'>
-      <div className='flex flex-col md:flex-row justify-between pt-4 pb-6 text-center md:text-right'>
+    <div className='rounded-div my-4 '>
+      <div className='flex flex-col md:flex-row justify-between pt-4 pb-6 text-center md:text-right '>
       <h1 className='font-bold  md:text-2xl '>Search Your Coin</h1>
         <form>
+
+       <div className='flex items-center'>
           <input
             onChange={(e) => setSearchText(e.target.value)}
-            className='rounded-div border-blue-400 placeholder-red-500'
+            className='shadow-box-shadow w-full rounded-2xl p-2 placeholder-slate-500'
             type='text'
             placeholder='Search a coin'
           />
+              <FcSearch className='m-2' size={30}/>
+          </div>
+
         </form>
       </div>
 

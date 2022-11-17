@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const CoinItem = ({coin}) => {
   return (
-    <tr className='rounded-div h-[80px] border-b overflow-hidden'>
+    <tr className=' shadow-box-shadow h-[80px] border-b overflow-hidden'>
  
       <td >
        <AiOutlineStar />
@@ -15,7 +15,7 @@ const CoinItem = ({coin}) => {
       <td>
         <Link to={`/coin/${coin.id}`} className="w-full">
         <div className='flex items-center justify-between h-[50px] hover:scale-110 hover:bg-blue-100 rounded-div2 cursor-pointer '>
-                  <img src={coin.image} alt="pic" className='w-10' />
+                  <img src={coin.image} alt="pic" className='w-8' />
                         <p className='hidden md:block font-bold ml-2 text-black '>{coin.name}</p>  
                    <p className='hidden sm:block text-[10px] md:text-lg text-blue-600 underline'> Read More </p>
                    </div>
