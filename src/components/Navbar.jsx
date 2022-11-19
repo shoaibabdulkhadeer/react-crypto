@@ -9,7 +9,6 @@ import { UserAuth } from '../context/AuthContext';
 
 const Navbar = () => {
 
-
   const [menu,setMenu]= useState(false)
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
@@ -40,7 +39,7 @@ const Navbar = () => {
 
  
    {/*SignupPage */}
-   {user?.email ? (<div className='hidden md:flex items-center'>
+   {user?.email? (<div className='hidden md:flex items-center'>
           <Link to='/account' className='p-4'>
             Account
           </Link>
@@ -77,10 +76,7 @@ const Navbar = () => {
 
 
      
-    {user?.email ? (<div className='flex flex-col absolute bottom-4 gap-2 items-center w-96 p-6 text-center mr-10 font-bold font-sans'>
-          <Link to='/account' className='p-4'>
-            Account
-          </Link>
+    {user?.email? (<div className='flex flex-col absolute bottom-4 gap-2 items-center w-96 p-6 text-center mr-10 font-bold font-sans'>
           <button onClick={ handleSignOut} className="bg-blue-700 p-2 text-white rounded-lg ease-in-out w-full duration-300 hover:tracking-widest">Sign out</button>
         </div>)  
         

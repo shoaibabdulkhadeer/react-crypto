@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useState, useEffect } from 'react';
 import { auth, db } from '../firebase';
 import {
@@ -21,6 +20,7 @@ export const AuthContextProvider = ({ children }) => {
       watchList: [],
     });
   };
+  
   const signIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };

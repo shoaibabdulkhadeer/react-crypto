@@ -34,6 +34,8 @@ const Signin = () => {
                         <h1 className='text-2xl font-bold'>Sign In</h1>
                         <div className='py-4'>
                            <form onSubmit={handleSubmit}>
+                           {error ? (<p>{error}</p>) : null}
+                      
                                 <label>Email </label>
 
                              <div className='w-full mt-2 flex items-center '>

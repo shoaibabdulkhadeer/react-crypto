@@ -14,7 +14,6 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-  
     try{
       await signUp(email,password)
       navigate('/account')
@@ -22,7 +21,6 @@ const Signup = () => {
       setError(e.message)
       console.log(e.message)
     }
-
   }
 
   return (

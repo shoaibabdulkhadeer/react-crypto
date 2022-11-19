@@ -1,14 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
+import {doc , onSnapshot , updateDoc } from 'firebase/firestore'
+import {db} from '../firebase'
+import { UserAuth } from '../context/AuthContext'
 
 const SavedCoin = () => {
 
- const [coins] = useState([])
+ const [coins,setCoins] = useState([])
+ const {user} = UserAuth()
+
+ useEffect(() => {
+  onSnapshot(doc(db,'users',`${user?.email}`),(doc) =>{
+    setCoins(doc.data()?.watchList)
+  })
+ },[user?.email])
+
+const coinPath = doc(db,'users', `${user?.email}`)
+
+const deleteCoin = async (passedid) => {
+  try{
+    const result = coins.filter((item) => item.id !== passedid)
+    await updateDoc(coinPath , {
+      watchList: result
+    })
+  } catch(e) {
+        console.log(e.message)
+  }
+}
+
 
   return (
     <div>
-    {coins.length === 0 ? ( <p>
+    {coins?.length === 0 ? ( <p>
           You don't have any coins saved. Please save a coin to add it to your
           watch list. <Link to='/' className='text-blue-600'>Click here to search coins.</Link>
         </p>) : (
@@ -22,7 +46,7 @@ const SavedCoin = () => {
                   </thead>
 
                     <tbody>
-                             {coins.map((coin,index) => (
+                             {coins?.map((coin,index) => (
                                 <tr key={coin.id} className="h-[60px] overflow-hidden"> 
                                     <td>{coin?.rank}</td>
                                     <td>
@@ -33,12 +57,12 @@ const SavedCoin = () => {
                                                 <p className='hidden sm:table-cell'> {coin?.name}</p>
                                                 <p className='text-grey-500 text-left text-sm'>{coin?.symbol.toUpperCase()}</p>
                                               </div>
-                                        </div>
+                                        </div>               
 
                                         </Link>
                                     </td>
-                                    <td className='pl-8'>
-                                        <AiOutlineClose className='cursor-pointer'/>
+                                    <td className='pl-8' >
+                                        <AiOutlineClose onClick={() => deleteCoin(coin.id)}className='cursor-pointer'/>
                                     </td>
                                 </tr>
                              ))}
